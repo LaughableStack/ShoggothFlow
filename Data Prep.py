@@ -6,6 +6,7 @@ vocab = 10000
 inputlength = 3
 f = open("LovecraftPassages.dat","rb+")
 passages = pickle.load(f)
+passages = passages[0:10] #The first several passages seem to work best
 f.close()
 def cleanup(dep):
   dep = dep.replace("!",".")
