@@ -4,7 +4,7 @@ import numpy as np
 data = pickle.load(open("model_data.dat","rb+"))
 topwords = pickle.load(open("Topwords.dat","rb+"))
 model = get_model(data[0],data[1])
-checkpoint_path = "weights/newest.hdf5"
+checkpoint_path = "newest.hdf5"
 model.load_weights(checkpoint_path)
 def get_pred(inp):
     return model.predict_classes(np.array([np.array(inp)]))
