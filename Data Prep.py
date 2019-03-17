@@ -9,16 +9,17 @@ passages = pickle.load(f)
 passages = passages[0:10] #The first several passages seem to work best
 f.close()
 def cleanup(dep):
-  dep = dep.replace("!",".")
-  dep = dep.replace("?",".")
+  dep = dep.replace("!"," !")
+  dep = dep.replace("?"," ?")
   dep = dep.replace(";",".")
   #All of above characters end sentences/sequences of characters, so they'll become our sentence break character
-  dep = dep.replace("\r\n"," ")
+  dep = dep.replace("\n","")
+  dep = dep.replace("\r","")
   dep = dep.replace(". ",".")
-  dep = dep.replace(".",". ")
+  dep = dep.replace("."," . ")
   #Add a space after every "."
-  dep = dep.replace("  "," ")
-  dep = dep.replace("   ","")
+  for i in range(0,5):
+    dep = dep.replace("  "," ")
   #Get rid of long sequences of spaces
   dep = dep.replace(",","")
   dep = dep.replace('"',"")
@@ -43,10 +44,10 @@ def cleanup(dep):
 #Make a list of all the words, in order.
 wordsequence = []
 for story in passages:
-  psent = cleanup(story).split(". ")
-  for sent in psent:
-    for word in sent.split(" "):
-      wordsequence.append(word)
+  psent = cleanup(story).split(" ")
+  for word in psent:
+    wordsequence.append(word)
+print(wordsequence[0:100])
 #List the words by frequency of occurence, and take the top vocab
 scount = Counter(wordsequence).most_common(vocab)
 topwords = list(f[0] for f in scount)

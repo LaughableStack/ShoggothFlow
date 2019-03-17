@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6340ec87-149e-43f1-884a-a7443207bb8c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Text Generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data Prep.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data Prep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PreparedData.dat" beforeDir="false" afterPath="$PROJECT_DIR$/PreparedData.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Topwords.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Topwords.dat" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Data Prep.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Data Prep.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Data Prep.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="10" selection-start-line="10" selection-end-line="11" />
+            <state relative-caret-position="356">
+              <caret line="94" column="9" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -59,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trainer.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="trainer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+            <state relative-caret-position="340">
+              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -80,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/Predictor.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -135,10 +137,10 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/model.py" />
         <option value="$PROJECT_DIR$/Text Generator.py" />
-        <option value="$PROJECT_DIR$/Data Prep.py" />
         <option value="$PROJECT_DIR$/trainer.py" />
         <option value="$PROJECT_DIR$/Predictor.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Data Prep.py" />
       </list>
     </option>
   </component>
@@ -188,7 +190,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Predictor">
+  <component name="RunManager" selected="Python.trainer">
     <configuration name="Data Prep" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ShoggothFlow" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -288,9 +290,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Predictor" />
         <item itemvalue="Python.trainer" />
         <item itemvalue="Python.Data Prep" />
+        <item itemvalue="Python.Predictor" />
         <item itemvalue="Python.Downloader" />
         <item itemvalue="Python.model" />
       </list>
@@ -326,14 +328,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="543" y="1" width="997" height="868" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26144457" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26144457" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29155672" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29040736" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32928476" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -693,16 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trainer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Text Generator.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -719,7 +710,7 @@
     <entry file="file://$PROJECT_DIR$/Predictor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
@@ -738,10 +729,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Data Prep.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" selection-start-line="10" selection-end-line="11" />
+        <state relative-caret-position="356">
+          <caret line="94" column="9" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
