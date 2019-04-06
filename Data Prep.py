@@ -3,12 +3,12 @@ from collections import Counter
 import numpy as np
 from functools import partial
 from operator import ne
-from keras.utils import to_categorical
+import keras
 vocab = 10000
 inputlength = 2
 f = open("LovecraftPassages.dat","rb+")
 passages = pickle.load(f)
-passages = passages[0:20] #The first 10-20 passages seem to work best
+passages = passages[0:10] #The first 10-20 passages seem to work best
 f.close()
 def cleanup(dep):
   dep = dep.replace("!"," !")
@@ -47,8 +47,8 @@ def cleanup(dep):
 #Make a list of all the words, in order.
 wordsequence = []
 for story in passages:
-  psent = cleanup(story).split(" ")
-  for word in psent:
+  pstor = cleanup(story).split(" ")
+  for word in pstor:
     wordsequence.append(word)
 print(wordsequence[0:100])
 wordsequence.remove("")
@@ -63,35 +63,18 @@ def getindex(c):
   else:
     return vocab;
 rawx = []
-rawy = []
-for indice in range(inputlength,len(wordsequence)):
-  rawx.append(wordsequence[indice-inputlength:indice])
-  rawy.append((wordsequence[indice]))
-numx = list(map(lambda x: list(map(getindex,x)),rawx))
-numy = list(map(getindex,rawy))
-finalx = np.array(list(map(np.array,numx)))
-finalx = finalx.reshape(-1,finalx.shape[1])
-finaly = np.array(numy)
-#---
-#This part removes all outputs and their corresponding inputs where the output is "unknown"
-tfinx = list(finalx)
-tfiny = list(finaly)
-popped = 0
-for i in range(0,len(finaly)):
-  if (finaly[i] == vocab):
-    tfinx.pop(i-popped)
-    tfiny.pop(i-popped)
-    popped+=1
-finalx = np.array(tfinx)
-finaly = np.array(tfiny)
-# You probably noticed we didn't make the outputs categorical.
-# This is because such would increase the size of the data so
-# much that pickle would return a memory error.
-# We're going to do that in the model file
+sentences = np.array(wordsequence)
+spoints = []
+for wordind in range(len(wordsequence)):
+  if wordsequence[wordind] in ".!?;":
+    spoints.append(wordind+1)
+sentences = np.split(sentences,spoints)
+sentences = np.array(list(map(lambda x: np.array(list(map(getindex,x))),sentences)))
+wvocab = 4*np.ceil(vocab/16)
+sentences = keras.preprocessing.sequence.pad_sequences(sentences, padding='post', value=wvocab)
 # Prepare object to save
-#layout: ((x,y),topwords)
-# x and y for training, topwords to translate to english
-saveobject = ((finalx,finaly),vocab)
+#layout: (x,topwords)
+saveobject = (sentences.reshape(sentences.shape[0],sentences.shape[1],1),vocab)
 f = open("PreparedData.dat","wb+")
 pickle.dump(saveobject,f)
 f.close()
