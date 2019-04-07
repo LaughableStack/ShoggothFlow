@@ -56,27 +56,27 @@ class Adversarial:
         model.add(Dense(int(self.inputlength/16),activation="relu",input_dim=self.random_noise_dimension))
         model.add(Reshape((int(self.inputlength/16),1)))
         model.add(UpSampling1D())
-        model.add(Conv1D(4,kernel_size=1,padding="same"))
+        model.add(LSTM(64,return_sequences=True))
         model.add(BatchNormalization(momentum=0.8))
         model.add(Activation("relu"))
 
         model.add(UpSampling1D())
-        model.add(Conv1D(4,kernel_size=1,padding="same"))
+        model.add(LSTM(64,return_sequences=True))
         model.add(BatchNormalization(momentum=0.8))
         model.add(Activation("relu"))
 
         model.add(UpSampling1D())
-        model.add(Conv1D(2,kernel_size=1,padding="same"))
+        model.add(LSTM(64,return_sequences=True))
         model.add(BatchNormalization(momentum=0.8))
         model.add(Activation("relu"))
 
         model.add(UpSampling1D())
-        model.add(Conv1D(2,kernel_size=1,padding="same"))
+        model.add(LSTM(64,return_sequences=True))
         model.add(BatchNormalization(momentum=0.8))
         model.add(Activation("relu"))
 
 
-        model.add(Conv1D(1,kernel_size=1,padding="same"))
+        model.add(LSTM(1))
         model.add(Activation("tanh"))
 
         model.summary()
@@ -157,7 +157,7 @@ class Adversarial:
         generation = model.predict(noise)
         generation+=1
         generation*=(self.vocab/2)
-        generation = generation.astype(np.uint16)
+        generation = generation.astype(np.uint32)
         generation = generation.reshape(generation.shape[0],generation.shape[1])
         outset = []
         for sent in generation:
