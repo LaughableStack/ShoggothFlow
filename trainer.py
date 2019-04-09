@@ -24,5 +24,5 @@ filepath="weights/weights-improvement-{epoch:02d}-{acc:.2f}.hdf5"
 checkpoint = ModelCheckpoint(filepath, monitor='acc', verbose=1, save_best_only=True, mode='max')
 callbacks_list = [checkpoint]
 pickle.dump((vocab,inputlength),open("model_data.dat","wb+"))
-model.fit(x,y, batch_size=32, epochs=40, verbose=1,callbacks=callbacks_list)
+model.fit(x,y, batch_size=32, epochs=100, verbose=1,callbacks=callbacks_list)
 model.save_weights("weights/newest.hdf5")
