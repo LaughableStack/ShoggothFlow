@@ -5,7 +5,7 @@ from functools import partial
 from operator import ne
 from keras.utils import to_categorical
 vocab = 15000
-inputlength = 4
+inputlength = 2
 f = open("LovecraftPassages.dat","rb+")
 passages = pickle.load(f)
 passages = passages[0:10] #The first 10-20 passages seem to work best
