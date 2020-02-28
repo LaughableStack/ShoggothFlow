@@ -9,6 +9,7 @@ passages = pickle.load(f)
 passages = passages[0:10] #The first several passages seem to work best
 f.close()
 def cleanup(dep):
+  #These are all individually explicated because they have to be done in a certain order and aren't numerous enough that automation would be efficacious
   dep = dep.replace("!",".")
   dep = dep.replace("?",".")
   dep = dep.replace(";",".")
